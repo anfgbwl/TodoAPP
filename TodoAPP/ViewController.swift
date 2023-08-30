@@ -37,7 +37,6 @@ class ViewController: UIViewController {
     
     // MARK: - setupUI
     private func setupUI() {
-        
         self.view.backgroundColor = .systemBackground
         self.view.addSubview(mainImage)
         self.view.addSubview(todoButton)
@@ -62,7 +61,6 @@ class ViewController: UIViewController {
             completedButton.widthAnchor.constraint(equalToConstant: 150),
             completedButton.heightAnchor.constraint(equalToConstant: 50),
         ])
-        
     }
 
     // MARK: - Lifecycle

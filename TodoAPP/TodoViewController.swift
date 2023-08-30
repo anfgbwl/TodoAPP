@@ -32,7 +32,7 @@ class TodoViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
-
+    
     // MARK: - setupUI
     private func setupUI() {
         self.view.backgroundColor = .systemBackground
@@ -45,7 +45,6 @@ class TodoViewController: UIViewController {
             tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
         ])
-        
     }
 
 }
@@ -62,8 +61,15 @@ extension TodoViewController: UITableViewDataSource, UITableViewDelegate {
             fatalError("Error")
         }
         cell.backgroundColor = .systemBackground
-        let title = self.todoList[indexPath.row]
-        cell.configure(with: title.todo)
+        let target = self.todoList[indexPath.row]
+        cell.configure(with: target.todo, and: target.isCompleted)
+        if cell.todoSwitch.isOn {
+            cell.todoLabel.attributedText = cell.todoLabel.text?.removestrikeThrough()
+            cell.todoLabel.textColor = .label
+        } else {
+            cell.todoLabel.textColor = .systemGray
+            cell.todoLabel.attributedText = cell.todoLabel.text?.strikeThrough()
+        }
         return cell
     }
     

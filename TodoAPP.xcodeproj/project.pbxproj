@@ -16,6 +16,7 @@
 		3FF775662A9F214F00AE64C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF775652A9F214F00AE64C9 /* ViewController.swift */; };
 		3FF775682A9F216F00AE64C9 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF775672A9F216F00AE64C9 /* Todo.swift */; };
 		3FF7756A2A9F230B00AE64C9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF775692A9F230B00AE64C9 /* MainView.swift */; };
+		3FF7756C2A9F349F00AE64C9 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF7756B2A9F349F00AE64C9 /* Extension+String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		3FF775652A9F214F00AE64C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3FF775672A9F216F00AE64C9 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		3FF775692A9F230B00AE64C9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		3FF7756B2A9F349F00AE64C9 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				3FF775692A9F230B00AE64C9 /* MainView.swift */,
 				3FF775532A9F0C3900AE64C9 /* TodoViewController.swift */,
 				3FF775632A9F175A00AE64C9 /* CustomCell.swift */,
+				3FF7756B2A9F349F00AE64C9 /* Extension+String.swift */,
 				3FF775582A9F0C3900AE64C9 /* Assets.xcassets */,
 				3FF7755A2A9F0C3900AE64C9 /* LaunchScreen.storyboard */,
 				3FF7755D2A9F0C3900AE64C9 /* Info.plist */,
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FF7756C2A9F349F00AE64C9 /* Extension+String.swift in Sources */,
 				3FF775662A9F214F00AE64C9 /* ViewController.swift in Sources */,
 				3FF7756A2A9F230B00AE64C9 /* MainView.swift in Sources */,
 				3FF775682A9F216F00AE64C9 /* Todo.swift in Sources */,
