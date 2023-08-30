@@ -10,5 +10,15 @@ import UIKit
 class MainView: UIView {
 
     static let identifier = "MainView"
+    
+    // MARK: - UI Components
+    private let mainImage: UIImageView = {
+        let mainIv = UIImageView()
+        mainIv.contentMode = .scaleAspectFit
+        mainIv.image = UIImage(named: "mainImage")
+        return mainIv
+    }()
 
+    
+    
 }
