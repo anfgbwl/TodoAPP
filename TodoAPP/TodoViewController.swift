@@ -9,12 +9,6 @@ import UIKit
 
 class TodoViewController: UIViewController {
     
-    // MARK: - Variables
-    private var todoList: [Todo] = [
-        Todo(todo: "킬링보이스 악뮤 보기", isCompleted: true),
-        Todo(todo: "개인 과제 코드로만 해보기", isCompleted: false)
-    ]
-    
     // MARK: - UI Conponents
     private let tableView: UITableView = {
        let tableView = UITableView()
@@ -45,7 +39,7 @@ class TodoViewController: UIViewController {
         }
         let add = UIAlertAction(title: "Add", style: .default) { (_) in
             if let title = todoAddAlert.textFields?[0].text, title != "" {
-                self.todoList.append(Todo(todo: title, isCompleted: false))
+                TodoManager.addTodo(Todo(todo: title, isCompleted: false))
                 self.tableView.reloadData()
             }
         }
@@ -58,7 +52,7 @@ class TodoViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        TodoManager.loadTodo()
         setupUI()
         addButton.target = self
         addButton.action = #selector(didTapAddButton)
@@ -87,7 +81,7 @@ extension TodoViewController: UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - NORMAL CELL
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return todoList.count
+        return TodoManager.todoList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -95,7 +89,7 @@ extension TodoViewController: UITableViewDataSource, UITableViewDelegate {
             fatalError("Error")
         }
         cell.backgroundColor = .systemBackground
-        let target = self.todoList[indexPath.row]
+        let target = TodoManager.todoList[indexPath.row]
         cell.configure(with: target.todo, and: target.isCompleted)
         if cell.todoSwitch.isOn {
             cell.todoLabel.textColor = .systemGray

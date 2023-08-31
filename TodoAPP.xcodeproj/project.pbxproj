@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FEBDF702AA02C5300F315CE /* TodoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEBDF6F2AA02C5300F315CE /* TodoManager.swift */; };
 		3FF775502A9F0C3900AE64C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF7754F2A9F0C3900AE64C9 /* AppDelegate.swift */; };
 		3FF775522A9F0C3900AE64C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF775512A9F0C3900AE64C9 /* SceneDelegate.swift */; };
 		3FF775542A9F0C3900AE64C9 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF775532A9F0C3900AE64C9 /* TodoViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3FEBDF6F2AA02C5300F315CE /* TodoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoManager.swift; sourceTree = "<group>"; };
 		3FF7754C2A9F0C3900AE64C9 /* TodoAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF7754F2A9F0C3900AE64C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FF775512A9F0C3900AE64C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				3FF7754F2A9F0C3900AE64C9 /* AppDelegate.swift */,
 				3FF775512A9F0C3900AE64C9 /* SceneDelegate.swift */,
 				3FF775672A9F216F00AE64C9 /* Todo.swift */,
+				3FEBDF6F2AA02C5300F315CE /* TodoManager.swift */,
 				3FF775652A9F214F00AE64C9 /* ViewController.swift */,
 				3FF775692A9F230B00AE64C9 /* MainView.swift */,
 				3FF775532A9F0C3900AE64C9 /* TodoViewController.swift */,
@@ -156,6 +159,7 @@
 				3FF775542A9F0C3900AE64C9 /* TodoViewController.swift in Sources */,
 				3FF775502A9F0C3900AE64C9 /* AppDelegate.swift in Sources */,
 				3FF775642A9F175A00AE64C9 /* CustomCell.swift in Sources */,
+				3FEBDF702AA02C5300F315CE /* TodoManager.swift in Sources */,
 				3FF775522A9F0C3900AE64C9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
