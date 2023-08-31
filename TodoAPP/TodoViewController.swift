@@ -24,11 +24,44 @@ class TodoViewController: UIViewController {
         tableView.allowsSelection = false
         return tableView
     }()
+    
+    private let addButton: UIBarButtonItem = {
+        let addButton = UIBarButtonItem()
+        addButton.title = "Add"
+        /*
+        여기 넣으면 오류: Type of expression is ambiguous without more context
+        addButton.target = self
+        addButton.action = #selector(didTapAddButton)
+        */
+        return addButton
+    }()
+    
+    
+    // MARK: - AddButton Action
+    @objc private func didTapAddButton() {
+        let todoAddAlert = UIAlertController(title: "Add Todo", message: "", preferredStyle: .alert)
+        todoAddAlert.addTextField { (textField) in
+            textField.placeholder = "Please write your todo."
+        }
+        let add = UIAlertAction(title: "Add", style: .default) { (_) in
+            if let title = todoAddAlert.textFields?[0].text, title != "" {
+                self.todoList.append(Todo(todo: title, isCompleted: false))
+                self.tableView.reloadData()
+            }
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        todoAddAlert.addAction(add)
+        todoAddAlert.addAction(cancel)
+        present(todoAddAlert, animated: false)
+    }
 
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
+        addButton.target = self
+        addButton.action = #selector(didTapAddButton)
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -37,6 +70,7 @@ class TodoViewController: UIViewController {
     private func setupUI() {
         self.view.backgroundColor = .systemBackground
         self.view.addSubview(tableView)
+        self.navigationItem.rightBarButtonItem = self.addButton
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -64,11 +98,11 @@ extension TodoViewController: UITableViewDataSource, UITableViewDelegate {
         let target = self.todoList[indexPath.row]
         cell.configure(with: target.todo, and: target.isCompleted)
         if cell.todoSwitch.isOn {
-            cell.todoLabel.attributedText = cell.todoLabel.text?.removestrikeThrough()
-            cell.todoLabel.textColor = .label
-        } else {
             cell.todoLabel.textColor = .systemGray
             cell.todoLabel.attributedText = cell.todoLabel.text?.strikeThrough()
+        } else {
+            cell.todoLabel.attributedText = cell.todoLabel.text?.removestrikeThrough()
+            cell.todoLabel.textColor = .label
         }
         return cell
     }

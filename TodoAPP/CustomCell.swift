@@ -24,22 +24,19 @@ class CustomCell: UITableViewCell {
         let todoSwitch = UISwitch()
         todoSwitch.isOn = true
         todoSwitch.onTintColor = .tintColor
-        todoSwitch.addTarget(self, action: #selector(didTapSwitch(sender:)), for: .valueChanged)
+        todoSwitch.addTarget(self, action: #selector(didTapSwitch(sender:)), for: .valueChanged) // self만 하면 경고창이 뜨는데 'self' refers to the method 'CustomCell.self', which may be unexpected -> CustomCell.self 하면 에러뜸
         return todoSwitch
     }()
     
     @objc func didTapSwitch(sender: UISwitch) {
         if sender.isOn {
-            todoLabel.attributedText = todoLabel.text?.removestrikeThrough()
-            todoLabel.textColor = .label
-        } else {
             todoLabel.textColor = .systemGray
             todoLabel.attributedText = todoLabel.text?.strikeThrough()
+        } else {
+            todoLabel.attributedText = todoLabel.text?.removestrikeThrough()
+            todoLabel.textColor = .label
         }
-        // 스위치 누르면 작동할 코드
-        // 스위치가 false이면 label에 취소선 긋기(extension 활용)
         // todo 업데이트
-        
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
