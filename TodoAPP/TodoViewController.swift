@@ -22,11 +22,6 @@ class TodoViewController: UIViewController {
     private let addButton: UIBarButtonItem = {
         let addButton = UIBarButtonItem()
         addButton.title = "Add"
-        /*
-        여기 넣으면 오류: Type of expression is ambiguous without more context
-        addButton.target = self
-        addButton.action = #selector(didTapAddButton)
-        */
         return addButton
     }()
     
@@ -52,6 +47,7 @@ class TodoViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         TodoManager.loadTodo()
         setupUI()
         addButton.target = self
@@ -99,6 +95,15 @@ extension TodoViewController: UITableViewDataSource, UITableViewDelegate {
             cell.todoLabel.textColor = .label
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            TodoManager.deleteTodo(indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.endUpdates()
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
