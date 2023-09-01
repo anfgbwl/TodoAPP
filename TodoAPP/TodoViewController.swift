@@ -84,6 +84,7 @@ extension TodoViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.identifier, for: indexPath) as? CustomCell else {
             fatalError("Error")
         }
+        cell.todoLabel.attributedText = nil
         cell.backgroundColor = .systemBackground
         let target = TodoManager.todoList[indexPath.row]
         cell.configure(with: target.todo, and: target.isCompleted)

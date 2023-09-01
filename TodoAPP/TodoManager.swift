@@ -16,7 +16,7 @@ struct TodoManager {
         Todo(todo: "개인 과제 코드로만 해보기", isCompleted: false)
     ]
     
-    static var completedTodoList = todoList.filter { $0.isCompleted == false }
+    static var completedTodoList: [Todo] = []
     
     // MARK: - Load
     static func loadTodo() {
@@ -24,6 +24,11 @@ struct TodoManager {
            let loadTodoList = try? JSONDecoder().decode([Todo].self, from: data) {
             todoList = loadTodoList
         }
+    }
+    
+    // MARK: - CompletedLoad
+    static func loadCompletedTodo() {
+        completedTodoList = todoList.filter { $0.isCompleted == true }
     }
     
     // MARK: - Add
@@ -34,6 +39,16 @@ struct TodoManager {
         saveTodo()
         loadTodo()
         print("todoList: ", todoList)
+    }
+    
+    // MARK: - Edit
+    static func editTodo(editTodoIndex: Int, editTodo: Todo) {
+        guard editTodoIndex >= 0 && editTodoIndex < todoList.count else { return }
+        todoList.remove(at: editTodoIndex)
+        todoList.insert(editTodo, at: editTodoIndex)
+        saveTodo()
+        loadTodo()
+        print(todoList)
     }
     
     // MARK: - Save

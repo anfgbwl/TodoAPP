@@ -27,6 +27,12 @@ class CompleteViewController: UIViewController {
         tableView.dataSource = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        TodoManager.loadCompletedTodo()
+    }
+    
     // MARK: - setupUI
     private func setupUI() {
         self.view.addSubview(tableView)
@@ -45,7 +51,6 @@ class CompleteViewController: UIViewController {
 extension CompleteViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(TodoManager.completedTodoList)
         return TodoManager.completedTodoList.count
     }
     

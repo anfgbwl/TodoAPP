@@ -33,10 +33,16 @@ class CustomCell: UITableViewCell {
             todoLabel.textColor = .systemGray
             todoLabel.attributedText = todoLabel.text?.strikeThrough()
         } else {
-            todoLabel.attributedText = todoLabel.text?.removestrikeThrough()
-            todoLabel.textColor = .label
+            todoLabel.attributedText = nil
         }
-        // todo 업데이트
+        guard let tableView = superview as? UITableView,
+              let indexPath = tableView.indexPath(for: self) else { return }
+        var editTodo = TodoManager.todoList[indexPath.row]
+        print("indexPath.row: ", indexPath.row)
+        print("editTodo: ", editTodo)
+        editTodo.isCompleted = sender.isOn
+        TodoManager.editTodo(editTodoIndex: indexPath.row, editTodo: editTodo)
+        tableView.reloadData()
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
