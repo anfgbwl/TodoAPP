@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3FEBDF702AA02C5300F315CE /* TodoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEBDF6F2AA02C5300F315CE /* TodoManager.swift */; };
+		3FEBDF742AA1A53900F315CE /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEBDF732AA1A53900F315CE /* CompleteViewController.swift */; };
 		3FF775502A9F0C3900AE64C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF7754F2A9F0C3900AE64C9 /* AppDelegate.swift */; };
 		3FF775522A9F0C3900AE64C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF775512A9F0C3900AE64C9 /* SceneDelegate.swift */; };
 		3FF775542A9F0C3900AE64C9 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF775532A9F0C3900AE64C9 /* TodoViewController.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		3FEBDF6F2AA02C5300F315CE /* TodoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoManager.swift; sourceTree = "<group>"; };
+		3FEBDF732AA1A53900F315CE /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
 		3FF7754C2A9F0C3900AE64C9 /* TodoAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF7754F2A9F0C3900AE64C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FF775512A9F0C3900AE64C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				3FF775692A9F230B00AE64C9 /* MainView.swift */,
 				3FF775532A9F0C3900AE64C9 /* TodoViewController.swift */,
 				3FF775632A9F175A00AE64C9 /* CustomCell.swift */,
+				3FEBDF732AA1A53900F315CE /* CompleteViewController.swift */,
 				3FF7756B2A9F349F00AE64C9 /* Extension+String.swift */,
 				3FF775582A9F0C3900AE64C9 /* Assets.xcassets */,
 				3FF7755A2A9F0C3900AE64C9 /* LaunchScreen.storyboard */,
@@ -155,6 +158,7 @@
 				3FF7756C2A9F349F00AE64C9 /* Extension+String.swift in Sources */,
 				3FF775662A9F214F00AE64C9 /* ViewController.swift in Sources */,
 				3FF7756A2A9F230B00AE64C9 /* MainView.swift in Sources */,
+				3FEBDF742AA1A53900F315CE /* CompleteViewController.swift in Sources */,
 				3FF775682A9F216F00AE64C9 /* Todo.swift in Sources */,
 				3FF775542A9F0C3900AE64C9 /* TodoViewController.swift in Sources */,
 				3FF775502A9F0C3900AE64C9 /* AppDelegate.swift in Sources */,
