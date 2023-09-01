@@ -69,12 +69,18 @@ class ViewController: UIViewController {
 
         setupUI()
         todoButton.addTarget(self, action: #selector(seletedTodoButton), for: .touchUpInside)
+        completedButton.addTarget(self, action: #selector(seletedCompletedButton), for: .touchUpInside)
     }
     
     // MARK: - Button Action
     @objc private func seletedTodoButton() {
         let TodoVC = TodoViewController()
         self.navigationController?.pushViewController(TodoVC, animated: true)
+    }
+    
+    @objc private func seletedCompletedButton() {
+        let CompleteVC = CompleteViewController()
+        self.navigationController?.pushViewController(CompleteVC, animated: true)
     }
     
 }

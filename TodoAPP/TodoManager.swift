@@ -16,6 +16,8 @@ struct TodoManager {
         Todo(todo: "개인 과제 코드로만 해보기", isCompleted: false)
     ]
     
+    static var completedTodoList = todoList.filter { $0.isCompleted == false }
+    
     // MARK: - Load
     static func loadTodo() {
         if let data = userDefaults.data(forKey: "todoList"),
