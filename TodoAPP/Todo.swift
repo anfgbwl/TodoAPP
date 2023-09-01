@@ -11,3 +11,9 @@ struct Todo: Codable {
     var todo: String
     var isCompleted: Bool
 }
+
+extension Todo: Equatable {
+    static func == (lhs: Todo, rhs: Todo) -> Bool {
+        return lhs.todo == rhs.todo
+    }
+}

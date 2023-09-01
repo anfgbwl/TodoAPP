@@ -38,8 +38,6 @@ class CustomCell: UITableViewCell {
         guard let tableView = superview as? UITableView,
               let indexPath = tableView.indexPath(for: self) else { return }
         var editTodo = TodoManager.todoList[indexPath.row]
-        print("indexPath.row: ", indexPath.row)
-        print("editTodo: ", editTodo)
         editTodo.isCompleted = sender.isOn
         TodoManager.editTodo(editTodoIndex: indexPath.row, editTodo: editTodo)
         tableView.reloadData()

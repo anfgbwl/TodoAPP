@@ -50,6 +50,7 @@ class CompleteViewController: UIViewController {
 
 extension CompleteViewController: UITableViewDelegate, UITableViewDataSource {
     
+    // MARK: - NORMAL CELL
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return TodoManager.completedTodoList.count
     }
@@ -59,6 +60,18 @@ extension CompleteViewController: UITableViewDelegate, UITableViewDataSource {
         cell.backgroundColor = .systemBackground
         cell.textLabel?.text = TodoManager.completedTodoList[indexPath.row].todo
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            let selectCompletedTodo = TodoManager.completedTodoList[indexPath.row]
+            let deleteCompletedTodoIndex = TodoManager.todoList.firstIndex { $0 == selectCompletedTodo } ?? 0
+            TodoManager.completedTodoList.remove(at: indexPath.row)
+            TodoManager.deleteTodo(deleteCompletedTodoIndex)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.endUpdates()
+        }
     }
     
 }

@@ -47,8 +47,6 @@ struct TodoManager {
         todoList.remove(at: editTodoIndex)
         todoList.insert(editTodo, at: editTodoIndex)
         saveTodo()
-        loadTodo()
-        print(todoList)
     }
     
     // MARK: - Save
